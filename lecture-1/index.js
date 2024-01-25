@@ -1,13 +1,15 @@
-const sum = function(arg){
+const sum = function(arg) {
   let sum = 0;
-    for(let i = 0; i < arg.length; i++){
-      let num = Number(arg[i]);
-    if(!isNaN(num)){
-      sum += num; 
-      return
+
+  for (let i = 0; i < arg.length; i++) {
+    let num = Number(arg[i]);
+    if (!isNaN(num)) {
+      sum += num;
+    } else {
+      console.log(`Skipping non-numeric argument ${arg[i]}`);
     }
-    console.log(`Skipping non-numeric arguments ${arg[i]}`);
   }
   return sum;
 }
-console.log(process.argv.slice(2))
+
+console.log(sum(process.argv.slice(2)));
